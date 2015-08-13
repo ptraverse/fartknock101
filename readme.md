@@ -1,4 +1,5 @@
 # FartKnocker Solution
+
 aka Learning to be a script kiddie 101
 
 From [https://www.vulnhub.com/entry/tophatsec-fartknocker,115/]
@@ -205,11 +206,11 @@ IMM:::.::::::::::::::::::::::::::::::::::: :::::::::::::::::::::::.=M
 ...  eins drei drei sieben
 
 
-# I AM THE GREAT CORNHOLIO - knock-knock
+# 4 - knock-knock
 
 That text above is german for ... 1337
 
-So, lets TCCP that port. Nothing. Give up? No! Move on to some better tools: knock-knock
+So, lets TCCP that port. Nothing. Give up? No! I am the great cornholio!! Move on to some better tools: knock-knock
 * [knock-knock](http://www.shortbus.ninja/default-knockd-cloaking-configurations/)
 * knockd is basically a tool to enable portknocking, which means you only open a port to a client if they knock in a special sequence with syn/acks on other ports. this tool knock-knock will kick its ass. Lesson- don't use knockd because it's a piece of shit :) But it's better than nothing. It's usually a good idea to hide your port 22 (SSH), that is if you must keep it open at all (VPN is much better).
 * Get it from [github](https://github.com/hack1thu7ch/knock-knock.git) `git clone https://github.com/hack1thu7ch/knock-knock.git`
@@ -217,9 +218,8 @@ So, lets TCCP that port. Nothing. Give up? No! Move on to some better tools: kno
 * `sudo apt-get install python-pcapy`
 * this is getting annoying... having to [install shit the hard way](http://www.secdev.org/projects/scapy/doc/installation.html)
 
+`sudo ./knockdefault.py ../iplist.txt output.txt`
 
+[-] Scanning 192.168.1.70 with Nmap, this could take a minute...go get some coffee
 
-
-
-
-
+#### Time for bed more tomorrow
