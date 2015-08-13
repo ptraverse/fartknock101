@@ -3,7 +3,8 @@
 aka Learning to be a script kiddie 101
 
 From [https://www.vulnhub.com/entry/tophatsec-fartknocker,115/]
-Prerequisites:
+
+### Prerequisites:
 * OracleVM VirtualBox
 * The FartKnocker.ova file loaded into oracle box (File->Import Appliance), up and running (cant login)
 * Another oracleVM box of any linux distro that you can control to attack the fartKnocker
