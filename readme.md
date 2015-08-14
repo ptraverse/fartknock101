@@ -317,3 +317,4 @@ But also discovered [CeWL](https://digi.ninja/projects/cewl.php#download) which 
 * synack/ack pattern
 * ssh trick - add extra command to end of ssh command
 * cewl - make customm wordlists easily
+* [blinking commits](http://blog.annharter.com/2015/08/12/blinking-commits.html)
