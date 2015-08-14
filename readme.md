@@ -318,5 +318,5 @@ But also discovered [CeWL](https://digi.ninja/projects/cewl.php#download) which 
 * ssh trick - add extra command to end of ssh command
 * cewl - make customm wordlists easily
 * sed syntax:
-`sed -i "r/ugly/beautiful/g" ./file.txt` to replace, in place (ie write to same file as input)
-`sed -i "/'deleteMe'/d" ./file.txt` to delete, in place
+	* `sed -i "s/ugly/beautiful/g" ./file.txt` to substitute, in place (ie write to same file as input), all occurrences
+	* `sed -i "/deleteme/d" ./file.txt` to delete, in place, all occurences
