@@ -288,6 +288,8 @@ checking what beavis has in /home/beavis and there are several things but all be
 
 in the end I cheated because I used other people's writeups.
 
+#### CeWL
+
 But also discovered [CeWL](https://digi.ninja/projects/cewl.php#download) which is cool - crawls any site to any depth and creates a custom wordlist based on words in the web site. Not that most people are dumb enough to post their own password all over the internet, but...
 
 `ruby cewl.rb http://www.brunolinux.com/02-The_Terminal/Find_and%20Replace_with_Sed.html --depth 1 -v -c --meta -w cewlout.txt`
@@ -307,3 +309,11 @@ But also discovered [CeWL](https://digi.ninja/projects/cewl.php#download) which 
 	command, 18
 	...
 
+#### Lessons/tools Learned
+* arp-scan
+* wireshark - inspect packets, see ports, view stream
+* nc - aka netcat
+* knockd, knock-knock
+* synack/ack pattern
+* ssh trick - add extra command to end of ssh command
+* cewl - make customm wordlists easily
