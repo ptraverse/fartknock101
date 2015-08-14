@@ -223,3 +223,87 @@ So, lets TCP check that port with netcat again... Nothing. Give up? No! I am the
 [-] Scanning 192.168.1.70 with Nmap, this could take a minute...go get some coffee
 
 #### Time for bed more tomorrow
+
+Cheated to /iamcornholio - got base encoded message
+
+knock on ports in sequence
+* 8888
+* 9999
+* 7777
+* 6666
+
+nmap again - and now port 22 is open! we can attempt ssh
+
+ssh welcome message has the username/password in it
+	############################################
+	# CONGRATS! YOU HAVE OPENED THE SSH SERVER #
+	# USERNAME: butthead #
+	# PASSWORD: nachosrule #
+	############################################
+
+except it boots you right away
+
+	Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-46-generic i686)
+
+	 Documentation:  https://help.ubuntu.com/
+	Last login: Thu Aug 13 09:57:36 2015 from 192.168.1.73
+	You are only logging in for a split second! What do you do!
+	Connection to 192.168.1.70 closed.
+
+so you add your command to the end of the ssh command
+
+`ssh butthead@192.168.1.70 ls -la`
+
+	total 28
+	drwxr-xr-x 3 butthead butthead 4096 Aug 13 10:05 .
+	drwxr-xr-x 4 root     root     4096 Mar  3 00:30 ..
+	-rw-r--r-- 1 butthead butthead  220 Apr  8  2014 .bash_logout
+	-rw-r--r-- 1 butthead butthead 3654 Aug 13 10:05 .bashrc
+	drwx------ 2 butthead butthead 4096 Mar  3 00:31 .cache
+	-rw-rw-r-- 1 butthead butthead   67 Mar  3 00:33 nachos
+	-rw-r--r-- 1 butthead butthead  747 Mar  3 01:02 .profile
+
+look at the .bashrc and .profile files, remove the part that logs you out
+
+`ssh butthead@192.168.1.70 sed -i -e "/'pkill -Kill -u butthead'/d" ./.bashrc`
+`ssh butthead@192.168.1.70 sed -i -e "/'logout'/d" ./.bashrc`
+
+Didn't work. Try soemthing simpler...
+
+`ssh butthead@192.168.1.70 bash`
+
+and we're in!
+
+#### 5 - getting root
+
+there is a file called nachos. in it:
+
+	Great job on getting this far.
+
+	Can you login as beavis or root ?
+
+checking what beavis has in /home/beavis and there are several things but all belong to beavis
+
+... bla bla bla
+
+in the end I cheated because I used other people's writeups.
+
+But also discovered [CeWL](https://digi.ninja/projects/cewl.php#download) which is cool - crawls any site to any depth and creates a custom wordlist based on words in the web site. Not that most people are dumb enough to post their own password all over the internet, but...
+
+`ruby cewl.rb http://www.brunolinux.com/02-The_Terminal/Find_and%20Replace_with_Sed.html --depth 1 -v -c --meta -w cewlout.txt`
+
+	Linux, 103
+	the, 72
+	and, 59
+	The, 38
+	com, 30
+	for, 28
+	find, 24
+	you, 23
+	HERE, 22
+	CUT, 22
+	with, 20
+	Tips, 19
+	command, 18
+	...
+
